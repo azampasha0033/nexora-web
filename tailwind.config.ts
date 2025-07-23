@@ -52,6 +52,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				nexora: {
+					primary: 'hsl(var(--nexora-primary))',
+					secondary: 'hsl(var(--nexora-secondary))',
+					accent: 'hsl(var(--nexora-accent))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
