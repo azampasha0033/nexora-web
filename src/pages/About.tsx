@@ -1,3 +1,5 @@
+
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/Layout";
@@ -5,6 +7,10 @@ import { Target, Users, Globe, Calendar, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const About = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const values = [
     {
       icon: Target,
@@ -25,24 +31,37 @@ const About = () => {
 
   const timeline = [
     {
-      year: "2024",
+      year: "2023",
       title: "Nexora Founded",
-      description: "Started with a vision to empower businesses through innovative digital solutions"
+      description: "Our journey began with a vision to empower businesses through innovative digital solutions"
     },
     {
       year: "2024",
-      title: "50+ Projects Completed",
+      title: "80+ Projects Completed",
       description: "Successfully delivered diverse projects across web development, POS systems, and e-commerce"
     },
     {
-      year: "2024",
+      year: "2025",
       title: "NexoraTool.com Launched",
-      description: "Released our free online utility platform serving thousands of users worldwide"
+      description: "Released our comprehensive free online utility platform serving thousands of users worldwide"
     },
     {
-      year: "2024+",
+      year: "2025+",
       title: "GCC & Pakistan Expansion",
       description: "Currently expanding our operations across the Gulf region and strengthening our Pakistan presence"
+    }
+  ];
+
+  const founders = [
+    {
+      name: "Muhammad Hamza Saleemi",
+      role: "Founder & CEO",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+    },
+    {
+      name: "Muhammad Naveed Anjum",
+      role: "Founder & CEO",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
     }
   ];
 
@@ -56,7 +75,7 @@ const About = () => {
               About Nexora
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Empowering businesses through innovative digital solutions since 2024
+              Empowering businesses through innovative digital solutions since 2023
             </p>
           </div>
         </section>
@@ -87,7 +106,7 @@ const About = () => {
                     >
                       NexoraTool.com
                     </a>
-                    , serving thousands of users worldwide with free PDF, SEO, and text processing tools."
+                    , serving thousands of users worldwide with free PDF, SEO, text processing, and developer tools."
                   </p>
                 </div>
               </div>
@@ -102,8 +121,39 @@ const About = () => {
           </div>
         </section>
 
-        {/* Values */}
+        {/* Founders Section */}
         <section className="py-16 bg-muted">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-foreground mb-4">Our Founders</h2>
+              <p className="text-lg text-muted-foreground">
+                Meet the visionaries behind Nexora's innovative solutions
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {founders.map((founder, index) => (
+                <Card key={index} className="text-center">
+                  <CardContent className="p-8">
+                    <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-6 border-4 border-nexora-primary/20">
+                      <img 
+                        src={founder.image} 
+                        alt={founder.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 className="text-xl font-semibold text-foreground mb-2">{founder.name}</h3>
+                    <p className="text-nexora-primary font-medium mb-4">{founder.role}</p>
+                    <div className="w-12 h-1 bg-gradient-to-r from-nexora-primary to-nexora-secondary rounded-full mx-auto"></div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Values */}
+        <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">Our Values</h2>
@@ -132,7 +182,7 @@ const About = () => {
         </section>
 
         {/* Timeline */}
-        <section className="py-16">
+        <section className="py-16 bg-muted">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">Our Journey</h2>
@@ -167,7 +217,7 @@ const About = () => {
         </section>
 
         {/* Team Section */}
-        <section className="py-16 bg-muted">
+        <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">Our Team</h2>
@@ -208,7 +258,7 @@ const About = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16">
+        <section className="py-16 bg-muted">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold text-foreground mb-6">
               Ready to Work With Us?

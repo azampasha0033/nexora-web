@@ -1,4 +1,5 @@
-import { useState } from "react";
+
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/Layout";
@@ -6,6 +7,10 @@ import { ExternalLink } from "lucide-react";
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState("All");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const filters = ["All", "Web", "POS", "WordPress", "Shopify"];
 
@@ -56,7 +61,7 @@ const Portfolio = () => {
       id: 7,
       name: "Blog & Content Platform",
       category: "WordPress",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68e2c6b696",
+      image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a",
       outcome: "Custom CMS improved content management efficiency by 70%."
     },
     {

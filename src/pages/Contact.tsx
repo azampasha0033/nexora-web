@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -5,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import Layout from "@/components/Layout";
-import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
+import { Phone, Mail, Clock, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -56,14 +57,6 @@ const Contact = () => {
       details: [
         "support@nexora.llc",
         "sales@nexora.llc"
-      ]
-    },
-    {
-      icon: MapPin,
-      title: "Locations",
-      details: [
-        "Pakistan Office",
-        "UAE Office"
       ]
     },
     {
@@ -201,30 +194,6 @@ const Contact = () => {
                       </Card>
                     );
                   })}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Map Section */}
-        <section className="py-16 bg-muted">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-foreground mb-4">Our Locations</h2>
-              <p className="text-lg text-muted-foreground">
-                Serving clients across Pakistan, UAE, and the GCC region
-              </p>
-            </div>
-
-            <div className="bg-background rounded-lg shadow-sm border border-border overflow-hidden">
-              <div className="h-96 bg-gradient-to-br from-nexora-primary/10 to-nexora-secondary/10 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="h-16 w-16 text-nexora-primary mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-foreground mb-2">Interactive Map</h3>
-                  <p className="text-muted-foreground">
-                    Map integration coming soon. Contact us for specific location details.
-                  </p>
                 </div>
               </div>
             </div>
