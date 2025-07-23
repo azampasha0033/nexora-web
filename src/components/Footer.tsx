@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Mail, Phone } from "lucide-react";
 
@@ -12,6 +11,14 @@ const Footer = () => {
     { name: "Products", href: "/products" },
     { name: "About Us", href: "/about" },
     { name: "Contact Us", href: "/contact" },
+    { name: "Blog", href: "/blog" },
+  ];
+
+  const legalLinks = [
+    { name: "Privacy Policy", href: "/privacy" },
+    { name: "Terms & Conditions", href: "/terms" },
+    { name: "Cookie Policy", href: "/cookies" },
+    { name: "Disclaimer", href: "/disclaimer" },
   ];
 
   return (
@@ -48,29 +55,20 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Our Products */}
+          {/* Legal Links */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Our Products</h3>
+            <h3 className="font-semibold text-foreground mb-4">Legal</h3>
             <ul className="space-y-2">
-              <li>
-                <a
-                  href="https://nexoratool.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-nexora-primary transition-colors text-sm"
-                >
-                  NexoraTool.com
-                </a>
-              </li>
-              <li>
-                <span className="text-muted-foreground text-sm">PDF Tools</span>
-              </li>
-              <li>
-                <span className="text-muted-foreground text-sm">SEO Tools</span>
-              </li>
-              <li>
-                <span className="text-muted-foreground text-sm">Text Tools</span>
-              </li>
+              {legalLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    to={link.href}
+                    className="text-muted-foreground hover:text-nexora-primary transition-colors text-sm"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
