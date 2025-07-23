@@ -72,7 +72,23 @@ const Products = () => {
         { name: "Passive Voice Detector", path: "/passive-voice-detector" },
         { name: "Random Sentence Generator", path: "/random-sentence-generator" },
         { name: "Quote Formatter", path: "/quote-formatter" },
-        { name: "Chronological Organizer", path: "/chronological-organizer" }
+        { name: "Chronological Organizer", path: "/chronological-organizer" },
+        { name: "Synonym Finder", path: "/synonym-finder" },
+        { name: "Antonym Finder", path: "/antonym-finder" },
+        { name: "Language Detector", path: "/language-detector" },
+        { name: "Anagram Generator", path: "/anagram-generator" },
+        { name: "Markdown to HTML Converter", path: "/Markdown-HTML-Converter" },
+        { name: "HTML to Plain Text", path: "/HTMLToPlainTextConverter" },
+        { name: "CSV/TSV to Text", path: "/CSVTSVToPlainTextConverter" },
+        { name: "JSON to Text", path: "/json-to-text" },
+        { name: "Code Comment Generator", path: "/code-comment-generator" },
+        { name: "Regex Generator", path: "/regex-generator" },
+        { name: "YAML JSON Formatter", path: "/yaml-json-formatter" },
+        { name: "HTML Beautifier", path: "/html-beautifier" },
+        { name: "Morse Code Converter", path: "/morse-code-converter" },
+        { name: "ASCII Art Generator", path: "/ascii-art-generator" },
+        { name: "Braille Translator", path: "/braille-translator" },
+        { name: "Text Difference Highlighter", path: "/text-difference-highlighter" }
       ]
     },
     {
@@ -95,7 +111,23 @@ const Products = () => {
         { name: "Cron Job Generator", path: "/cron-job-generator" },
         { name: "Password Strength Checker", path: "/password-strength-checker" },
         { name: "Hashing Tool", path: "/hashing-tool" },
-        { name: "Time Zone Converter", path: "/time-zone-converter" }
+        { name: "Time Zone Converter", path: "/time-zone-converter" },
+        { name: "Database Schema Visualizer", path: "/database-schema-visualizer" },
+        { name: "SQL to NoSQL Converter", path: "/sql-to-nosql-converter" },
+        { name: "Data Mocking Tool", path: "/data-mocking-tool" },
+        { name: "API Request Generator", path: "/api-request-generator" },
+        { name: "JSON to CSV Converter", path: "/json-to-csv-converter" },
+        { name: "CSV to Excel Converter", path: "/csv-to-excel-converter" },
+        { name: "Excel Merger", path: "/excel-merger" },
+        { name: "Excel Viewer", path: "/excel-viewer" },
+        { name: "XSS Payload Generator", path: "/xss-payload-generator" },
+        { name: "IP Geolocation", path: "/ip-geolocation" },
+        { name: "API Rate Limit Tester", path: "/api-rate-limit-tester" },
+        { name: "Code Performance Benchmark", path: "/code-performance-benchmark" },
+        { name: "Unit Test Generator", path: "/unit-test-generator" },
+        { name: "Load Testing Tool", path: "/load-testing-tool" },
+        { name: "Memory Leak Detector", path: "/memory-leak-detector" },
+        { name: "Key Change Detector", path: "/key-change-detector" }
       ]
     },
     {
@@ -110,6 +142,22 @@ const Products = () => {
         { name: "WebP to PNG", path: "/webp-to-png" },
         { name: "JPG to WebP", path: "/jpg-to-webp" },
         { name: "WebP to JPG", path: "/webp-to-jpg" },
+        { name: "GIF to PNG", path: "/gif-to-png" },
+        { name: "GIF to JPG", path: "/gif-to-jpg" },
+        { name: "BMP to PNG", path: "/bmp-to-png" },
+        { name: "BMP to JPG", path: "/bmp-to-jpg" },
+        { name: "TIFF to PNG", path: "/tiff-to-png" },
+        { name: "TIFF to JPG", path: "/tiff-to-jpg" },
+        { name: "SVG to PNG", path: "/svg-to-png" },
+        { name: "SVG to JPG", path: "/svg-to-jpg" },
+        { name: "HEIC to JPG", path: "/heic-to-jpg" },
+        { name: "HEIC to PNG", path: "/heic-to-png" },
+        { name: "RAW to JPG", path: "/raw-to-jpg" },
+        { name: "RAW to PNG", path: "/raw-to-png" },
+        { name: "EPS to PNG", path: "/eps-to-png" },
+        { name: "EPS to JPG", path: "/eps-to-jpg" },
+        { name: "PSD to PNG", path: "/psd-to-png" },
+        { name: "PSD to JPG", path: "/psd-to-jpg" },
         { name: "Resize Image", path: "/resize-image" },
         { name: "Crop Image", path: "/crop-image" },
         { name: "Circle Crop", path: "/circle-crop" },
@@ -128,7 +176,15 @@ const Products = () => {
         { name: "GIF to Video", path: "/gif-to-video", comingSoon: true },
         { name: "Video Resizer", path: "/video-resizer", comingSoon: true },
         { name: "Video Cropper", path: "/video-cropper", comingSoon: true },
-        { name: "Video Trimmer", path: "/video-trimmer", comingSoon: true }
+        { name: "Video Trimmer", path: "/video-trimmer", comingSoon: true },
+        { name: "Video Merger", path: "/video-merger", comingSoon: true },
+        { name: "Video Rotator", path: "/video-rotator", comingSoon: true },
+        { name: "Video Speed", path: "/video-speed", comingSoon: true },
+        { name: "Video Watermark", path: "/video-watermark", comingSoon: true },
+        { name: "Video Stabilizer", path: "/video-stabilizer", comingSoon: true },
+        { name: "Video Frame Extractor", path: "/video-frame-extractor", comingSoon: true },
+        { name: "Video Background Remover", path: "/video-background-remover", comingSoon: true },
+        { name: "Video Enhancer", path: "/video-enhancer", comingSoon: true }
       ]
     },
     {
@@ -152,11 +208,29 @@ const Products = () => {
       features: ["Date calculations", "Time conversion", "Duration tools", "Countdown timers"],
       tools: [
         { name: "Date Gap Calculator", path: "/date/date-gap-calculator" },
+        { name: "Time Span Finder", path: "/date/timespan-finder" },
         { name: "Days Between Dates", path: "/date/days-between-dates" },
-        { name: "Time Zone Converter", path: "/time-zone-converter" },
+        { name: "Quick Date Diff", path: "/date/quick-date-diff" },
+        { name: "Date Delta Tool", path: "/date/date-delta-tool" },
+        { name: "Time Passed", path: "/date/time-passed" },
+        { name: "Countdown Mate", path: "/date/countdown-mate" },
+        { name: "Age Duration Wizard", path: "/date/age-duration-wizard" },
+        { name: "Elapsed Time Tool", path: "/date/elapsed-time-tool" },
+        { name: "TimeCalc Pro", path: "/date/timecalc-pro" },
         { name: "Stopwatch Tool", path: "/time/stopwatch" },
-        { name: "Time Unit Converter", path: "/time-unit-converter" },
-        { name: "Countdown Timer", path: "/date/countdown-mate" }
+        { name: "Time Unit Converter", path: "/time-unit-converter" }
+      ]
+    },
+    {
+      icon: Wrench,
+      name: "Utility Tools",
+      description: "Miscellaneous utility tools for various tasks",
+      features: ["General utilities", "Productivity tools", "Helper functions", "Convenience tools"],
+      tools: [
+        { name: "Journal Prompt Generator", path: "/journal-prompt-generator" },
+        { name: "Gift Idea Generator", path: "/gift-idea-generator" },
+        { name: "Book Summary Generator", path: "/book-summary-generator" },
+        { name: "Grocery List Optimizer", path: "/grocery-list-optimizer" }
       ]
     }
   ];
@@ -202,7 +276,7 @@ const Products = () => {
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">Available Tool Categories</h2>
               <p className="text-lg text-muted-foreground">
-                Over 100+ tools organized into comprehensive categories for maximum productivity
+                Over 200+ tools organized into comprehensive categories for maximum productivity
               </p>
             </div>
 
@@ -230,7 +304,11 @@ const Products = () => {
                             asChild
                             variant="outline"
                             size="sm"
-                            className={`text-left justify-start h-auto p-3 ${tool.comingSoon ? 'opacity-50 cursor-not-allowed' : 'hover:bg-nexora-accent'}`}
+                            className={`text-left justify-start h-auto p-3 ${
+                              tool.comingSoon 
+                                ? 'opacity-50 cursor-not-allowed' 
+                                : 'hover:bg-nexora-accent hover:text-foreground hover:border-nexora-primary'
+                            }`}
                             disabled={tool.comingSoon}
                           >
                             {tool.comingSoon ? (
@@ -267,7 +345,7 @@ const Products = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-background rounded-lg p-6 shadow-sm">
                 <img 
-                  src="https://images.unsplash.com/photo-1555066931-4365d14bab8c" 
+                  src="/lovable-uploads/359584a6-51f1-4d88-9e8e-e4e64c524345.png" 
                   alt="PDF Tools Interface"
                   className="w-full h-48 object-cover rounded-lg mb-4"
                 />

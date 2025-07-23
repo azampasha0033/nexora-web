@@ -56,12 +56,12 @@ const About = () => {
     {
       name: "Muhammad Hamza Saleemi",
       role: "Founder & CEO",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+      image: "/lovable-uploads/4eac04c2-fca0-4a9d-af0c-f73da9be2860.png"
     },
     {
       name: "Muhammad Naveed Anjum",
       role: "Founder & CEO",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
+      image: "/lovable-uploads/b476ecf4-f63f-46ec-9f94-52c09f301c93.png"
     }
   ];
 

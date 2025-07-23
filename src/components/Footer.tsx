@@ -1,5 +1,6 @@
+
 import { Link } from "react-router-dom";
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,13 +12,6 @@ const Footer = () => {
     { name: "Products", href: "/products" },
     { name: "About Us", href: "/about" },
     { name: "Contact Us", href: "/contact" },
-  ];
-
-  const socialLinks = [
-    { name: "Facebook", icon: Facebook, href: "#" },
-    { name: "Twitter", icon: Twitter, href: "#" },
-    { name: "LinkedIn", icon: Linkedin, href: "#" },
-    { name: "Instagram", icon: Instagram, href: "#" },
   ];
 
   return (
@@ -35,21 +29,6 @@ const Footer = () => {
             <p className="text-muted-foreground text-sm">
               Empowering your digital future with innovative web development, software solutions, and cutting-edge technology.
             </p>
-            <div className="flex space-x-4">
-              {socialLinks.map((social) => {
-                const Icon = social.icon;
-                return (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    className="text-muted-foreground hover:text-nexora-primary transition-colors"
-                    aria-label={social.name}
-                  >
-                    <Icon className="h-5 w-5" />
-                  </a>
-                );
-              })}
-            </div>
           </div>
 
           {/* Quick Links */}
