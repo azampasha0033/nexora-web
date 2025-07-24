@@ -62,7 +62,7 @@ const About = () => {
     {
       name: "Muhammad Naveed Anjum",
       role: "Founder & CEO",
-      image: "/lovable-uploads/4eac04c2-fca0-4a9d-af0c-f73da9be2860.png"
+      image: "/lovable-uploads/placeholder-male.jpg"
     }
   ];
 
