@@ -318,8 +318,8 @@ const Homepage = () => {
               <Link to="/contact">Get Free Quote</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-nexora-primary text-lg px-8 py-6 gap-2">
-              <a href="tel:+923090230074">
-                Call Now: +92 309 023 0074
+              <a href="tel:+447877180793">
+                Call Now: +44 7877 180793
               </a>
             </Button>
           </div>

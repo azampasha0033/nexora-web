@@ -96,7 +96,7 @@ const Privacy = () => {
               </p>
               <div className="mt-4 text-muted-foreground">
                 <p>Email: support@nexora.llc</p>
-                <p>Phone: +92 309 023 0074 (Pakistan) | +971 54 765 9859 (UAE)</p>
+                <p>Phone: +44 7877 180793 (UK) | +971 54 765 9859 (UAE) | +92 309 023 0074 (Pakistan)</p>
               </div>
             </section>
           </div>

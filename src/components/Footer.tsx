@@ -79,8 +79,9 @@ const Footer = () => {
               <li className="flex items-center space-x-2 text-sm">
                 <Phone className="h-4 w-4 text-nexora-primary" />
                 <div>
-                  <div className="text-muted-foreground">Pakistan: +92 309 023 0074</div>
+                  <div className="text-muted-foreground">UK: +44 7877 180793</div>
                   <div className="text-muted-foreground">UAE: +971 54 765 9859</div>
+                  <div className="text-muted-foreground">Pakistan: +92 309 023 0074</div>
                 </div>
               </li>
               <li className="flex items-center space-x-2 text-sm">

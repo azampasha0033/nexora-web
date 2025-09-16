@@ -47,8 +47,9 @@ const Contact = () => {
       icon: Phone,
       title: "Phone Numbers",
       details: [
-        "Pakistan: +92 309 023 0074",
-        "UAE: +971 54 765 9859"
+        "UK: +44 7877 180793",
+        "UAE: +971 54 765 9859",
+        "Pakistan: +92 309 023 0074"
       ]
     },
     {
