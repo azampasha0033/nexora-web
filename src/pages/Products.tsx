@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Layout from "@/components/Layout";
-import { FileText, Search, Type, Download, ExternalLink, Zap, Image, Calendar, Clock, QrCode, Video, Code, Wrench, Languages, PenTool } from "lucide-react";
+import { FileText, Search, Type, Download, ExternalLink, Zap, Image, Calendar, Clock, QrCode, Video, Code, Wrench, Languages, PenTool, MessageCircle } from "lucide-react";
 
 const Products = () => {
   useEffect(() => {
@@ -249,24 +249,59 @@ const Products = () => {
         {/* Hero Section */}
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="flex items-center justify-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-r from-nexora-primary to-nexora-secondary rounded-lg flex items-center justify-center">
-                <Zap className="h-6 w-6 text-white" />
-              </div>
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground">
-                NexoraTool.com
-              </h1>
-            </div>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Comprehensive suite of free online utilities for PDF processing, SEO optimization, text manipulation, 
-              image conversion, and developer tools. All tools are completely free and require no registration.
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              Our Products
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12">
+              Innovative tools and platforms designed to boost productivity and streamline workflows
             </p>
-            <Button asChild size="lg" className="bg-gradient-to-r from-nexora-primary to-nexora-secondary hover:opacity-90 gap-2">
-              <a href="https://nexoratool.com" target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="h-5 w-5" />
-                Go to NexoraTool.com
-              </a>
-            </Button>
+            
+            {/* Product Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
+              {/* NexoraTool Card */}
+              <Card className="overflow-hidden border-2 border-nexora-primary/20 hover:border-nexora-primary/40 transition-all duration-300">
+                <div className="p-8">
+                  <div className="flex items-center justify-center space-x-3 mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-r from-nexora-primary to-nexora-secondary rounded-lg flex items-center justify-center">
+                      <Zap className="h-6 w-6 text-white" />
+                    </div>
+                    <h2 className="text-3xl font-bold text-foreground">NexoraTool.com</h2>
+                  </div>
+                  <p className="text-muted-foreground mb-6">
+                    Comprehensive suite of free online utilities for PDF processing, SEO optimization, text manipulation, 
+                    image conversion, and developer tools. All tools are completely free and require no registration.
+                  </p>
+                  <Button asChild size="lg" className="bg-gradient-to-r from-nexora-primary to-nexora-secondary hover:opacity-90 gap-2 w-full">
+                    <a href="https://nexoratool.com" target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="h-5 w-5" />
+                      Visit NexoraTool.com
+                    </a>
+                  </Button>
+                </div>
+              </Card>
+
+              {/* ChatAsBot Card */}
+              <Card className="overflow-hidden border-2 border-green-500/20 hover:border-green-500/40 transition-all duration-300">
+                <div className="p-8">
+                  <div className="flex items-center justify-center space-x-3 mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-r from-green-600 to-green-500 rounded-lg flex items-center justify-center">
+                      <MessageCircle className="h-6 w-6 text-white" />
+                    </div>
+                    <h2 className="text-3xl font-bold text-foreground">ChatAsBot.com</h2>
+                  </div>
+                  <p className="text-muted-foreground mb-6">
+                    Advanced WhatsApp automation platform for businesses. Automate customer support, 
+                    lead generation, and communication workflows with intelligent AI-powered chatbots.
+                  </p>
+                  <Button asChild size="lg" className="bg-gradient-to-r from-green-600 to-green-500 hover:opacity-90 gap-2 w-full">
+                    <a href="https://chatasbot.com" target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="h-5 w-5" />
+                      Visit ChatAsBot.com
+                    </a>
+                  </Button>
+                </div>
+              </Card>
+            </div>
           </div>
         </section>
 
