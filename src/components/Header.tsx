@@ -49,8 +49,8 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex">
-            <Button asChild className="bg-gradient-to-r from-nexora-primary to-nexora-secondary hover:opacity-90">
-              <Link to="/contact">Get Free Quote</Link>
+            <Button asChild className="bg-gradient-to-r from-nexora-primary to-nexora-secondary hover:opacity-90 rounded-xl">
+              <Link to="/contact">Book Demo</Link>
             </Button>
           </div>
 
@@ -85,9 +85,9 @@ const Header = () => {
                 </Link>
               ))}
               <div className="px-3 py-2">
-                <Button asChild className="w-full bg-gradient-to-r from-nexora-primary to-nexora-secondary">
+                <Button asChild className="w-full bg-gradient-to-r from-nexora-primary to-nexora-secondary rounded-xl">
                   <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                    Get Free Quote
+                    Book Demo
                   </Link>
                 </Button>
               </div>
