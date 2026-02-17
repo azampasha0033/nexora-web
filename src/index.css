@@ -8,46 +8,48 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 220 15% 20%;
+    --background: 220 20% 97%;
+    --foreground: 220 20% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 20%;
+    --card-foreground: 220 20% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 20%;
+    --popover-foreground: 220 20% 10%;
 
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 220 90% 56%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217 10% 96%;
-    --secondary-foreground: 220 15% 20%;
+    --secondary: 160 84% 39%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 217 10% 96%;
+    --muted: 220 14% 96%;
     --muted-foreground: 220 9% 46%;
 
-    --accent: 217 91% 60%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 220 90% 56%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 217 91% 60%;
+    --ring: 220 90% 56%;
 
-    /* Custom Nexora brand colors */
-    --nexora-primary: 217 91% 60%;
-    --nexora-secondary: 280 100% 70%;
-    --nexora-accent: 217 91% 95%;
-    --nexora-gradient: linear-gradient(135deg, hsl(217 91% 60%), hsl(280 100% 70%));
-    --nexora-gradient-subtle: linear-gradient(135deg, hsl(217 91% 60% / 0.1), hsl(280 100% 70% / 0.1));
+    /* Nexora SaaS brand colors */
+    --nexora-primary: 220 90% 56%;
+    --nexora-secondary: 160 84% 39%;
+    --nexora-accent: 220 90% 95%;
+    --nexora-dark: 220 25% 8%;
+    --nexora-gradient: linear-gradient(135deg, hsl(220 90% 56%), hsl(160 84% 39%));
+    --nexora-gradient-subtle: linear-gradient(135deg, hsl(220 90% 56% / 0.08), hsl(160 84% 39% / 0.08));
     
     /* Shadows and effects */
-    --shadow-elegant: 0 20px 25px -5px hsl(217 91% 60% / 0.1), 0 10px 10px -5px hsl(217 91% 60% / 0.04);
-    --shadow-glow: 0 0 40px hsl(217 91% 60% / 0.3);
+    --shadow-elegant: 0 20px 40px -12px hsl(220 90% 56% / 0.15);
+    --shadow-glow: 0 0 60px hsl(220 90% 56% / 0.2);
+    --shadow-card: 0 1px 3px hsl(220 20% 10% / 0.06), 0 8px 24px hsl(220 20% 10% / 0.04);
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
