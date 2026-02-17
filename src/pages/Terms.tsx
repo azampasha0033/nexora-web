@@ -1,4 +1,3 @@
-
 import Layout from "@/components/Layout";
 import { Helmet } from "react-helmet";
 
@@ -7,103 +6,58 @@ const Terms = () => {
     <Layout>
       <Helmet>
         <title>Terms & Conditions - Nexora LLC</title>
-        <meta name="description" content="Terms & Conditions for Nexora LLC - Learn about our service terms and user obligations." />
+        <meta name="description" content="Terms & Conditions for Nexora LLC automation platform." />
       </Helmet>
-      
-      <div className="bg-gradient-to-b from-nexora-accent to-background py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl font-bold text-center mb-8 text-foreground">Terms & Conditions</h1>
-          <p className="text-center text-muted-foreground mb-12">Last updated: January 2025</p>
-          
-          <div className="bg-card rounded-lg shadow-lg p-8 space-y-8">
-            <section>
-              <h2 className="text-2xl font-semibold mb-4 text-foreground">1. Acceptance of Terms</h2>
-              <p className="text-muted-foreground">
-                By accessing and using Nexora LLC's services, you accept and agree to be bound by 
-                the terms and provision of this agreement. If you do not agree to abide by the 
-                above, please do not use this service.
-              </p>
-            </section>
 
+      <section className="relative py-16 overflow-hidden bg-nexora-dark">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_hsl(220_25%_8%)_70%)]" />
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl font-bold text-white mb-4">Terms & Conditions</h1>
+          <p className="text-gray-400">Last updated: January 2025</p>
+        </div>
+      </section>
+
+      <section className="py-16 bg-background">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-card border border-border rounded-2xl p-8 space-y-8">
             <section>
-              <h2 className="text-2xl font-semibold mb-4 text-foreground">2. Services Description</h2>
-              <p className="text-muted-foreground mb-4">
-                Nexora LLC provides web development, software development, and digital solutions 
-                including but not limited to:
-              </p>
+              <h2 className="text-2xl font-bold mb-4 text-foreground">1. Acceptance of Terms</h2>
+              <p className="text-muted-foreground">By accessing and using Nexora's automation platform and services, you accept and agree to be bound by these terms.</p>
+            </section>
+            <section>
+              <h2 className="text-2xl font-bold mb-4 text-foreground">2. Services Description</h2>
+              <p className="text-muted-foreground mb-4">Nexora provides AI-powered communication automation including:</p>
               <ul className="list-disc list-inside text-muted-foreground space-y-2">
-                <li>Custom web development and design</li>
-                <li>Software development and consulting</li>
-                <li>Point-of-Sale (POS) solutions</li>
-                <li>WordPress and Shopify customization</li>
+                <li>WhatsApp AI chatbot automation</li>
+                <li>Website live chat automation</li>
+                <li>Smart robo calling & VoIP CRM</li>
+                <li>Shopify store automation</li>
                 <li>Free online tools via NexoraTool.com</li>
               </ul>
             </section>
-
             <section>
-              <h2 className="text-2xl font-semibold mb-4 text-foreground">3. User Obligations</h2>
-              <p className="text-muted-foreground mb-4">Users agree to:</p>
+              <h2 className="text-2xl font-bold mb-4 text-foreground">3. User Obligations</h2>
               <ul className="list-disc list-inside text-muted-foreground space-y-2">
                 <li>Provide accurate and complete information</li>
                 <li>Use services only for lawful purposes</li>
-                <li>Not interfere with the operation of our services</li>
-                <li>Respect intellectual property rights</li>
-                <li>Comply with all applicable laws and regulations</li>
+                <li>Comply with WhatsApp and platform policies</li>
+                <li>Respect data protection regulations</li>
               </ul>
             </section>
-
             <section>
-              <h2 className="text-2xl font-semibold mb-4 text-foreground">4. Payment Terms</h2>
-              <p className="text-muted-foreground mb-4">
-                Payment terms are as follows:
-              </p>
-              <ul className="list-disc list-inside text-muted-foreground space-y-2">
-                <li>50% advance payment required for all projects</li>
-                <li>Remaining 50% due upon project completion</li>
-                <li>Payments are non-refundable unless otherwise agreed</li>
-                <li>Late payments may incur additional charges</li>
-              </ul>
+              <h2 className="text-2xl font-bold mb-4 text-foreground">4. Limitation of Liability</h2>
+              <p className="text-muted-foreground">Nexora LLC shall not be liable for indirect, incidental, or consequential damages arising from use of our platform.</p>
             </section>
-
             <section>
-              <h2 className="text-2xl font-semibold mb-4 text-foreground">5. Intellectual Property</h2>
-              <p className="text-muted-foreground">
-                All content, features, and functionality of our services are owned by Nexora LLC 
-                and are protected by international copyright, trademark, and other intellectual 
-                property laws. Custom work delivered to clients becomes their property upon full payment.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-semibold mb-4 text-foreground">6. Limitation of Liability</h2>
-              <p className="text-muted-foreground">
-                Nexora LLC shall not be liable for any indirect, incidental, special, or consequential 
-                damages arising out of or in connection with the use of our services. Our total 
-                liability shall not exceed the amount paid for the specific service.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-semibold mb-4 text-foreground">7. Termination</h2>
-              <p className="text-muted-foreground">
-                Either party may terminate services with written notice. Upon termination, 
-                all rights and obligations shall cease except those that by their nature should survive.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-semibold mb-4 text-foreground">8. Contact Information</h2>
-              <p className="text-muted-foreground">
-                For questions about these Terms & Conditions, contact us at:
-              </p>
-              <div className="mt-4 text-muted-foreground">
+              <h2 className="text-2xl font-bold mb-4 text-foreground">5. Contact</h2>
+              <div className="text-muted-foreground">
                 <p>Email: support@nexora.llc</p>
                 <p>Phone: +44 7877 180793 (UK) | +971 54 765 9859 (UAE) | +92 309 023 0074 (Pakistan)</p>
               </div>
             </section>
           </div>
         </div>
-      </div>
+      </section>
     </Layout>
   );
 };

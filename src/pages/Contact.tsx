@@ -1,12 +1,10 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import Layout from "@/components/Layout";
-import { Phone, Mail, Clock, Send } from "lucide-react";
+import { Phone, Mail, Clock, Send, MessageSquare } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -20,207 +18,143 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
     toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting us. We'll get back to you within 24 hours.",
+      title: "Demo Request Sent!",
+      description: "Thank you! Our team will contact you within 24 hours to schedule your demo.",
     });
-    
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      message: ""
-    });
+    setFormData({ name: "", email: "", phone: "", message: "" });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const contactInfo = [
     {
       icon: Phone,
-      title: "Phone Numbers",
-      details: [
-        "UK: +44 7877 180793",
-        "UAE: +971 54 765 9859",
-        "Pakistan: +92 309 023 0074"
-      ]
+      title: "Call Us",
+      details: ["UK: +44 7877 180793", "UAE: +971 54 765 9859", "Pakistan: +92 309 023 0074"]
     },
     {
       icon: Mail,
-      title: "Email Addresses",
-      details: [
-        "support@nexora.llc",
-        "sales@nexora.llc"
-      ]
+      title: "Email Us",
+      details: ["support@nexora.llc", "sales@nexora.llc"]
     },
     {
       icon: Clock,
       title: "Business Hours",
-      details: [
-        "Monday - Friday: 9:00 AM - 6:00 PM",
-        "Saturday: 10:00 AM - 4:00 PM"
-      ]
+      details: ["Monday - Friday: 9:00 AM - 6:00 PM", "Saturday: 10:00 AM - 4:00 PM"]
     }
   ];
 
   return (
     <Layout>
-      <div className="bg-gradient-to-b from-nexora-accent to-background">
-        {/* Hero Section */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Contact Us
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Ready to start your project? Get in touch with our team for a free consultation and quote.
-            </p>
+      {/* Hero */}
+      <section className="relative py-20 lg:py-24 overflow-hidden bg-nexora-dark">
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-nexora-primary/10 rounded-full blur-3xl animate-pulse-glow" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-nexora-secondary/10 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '1.5s' }} />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_hsl(220_25%_8%)_70%)]" />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center gap-2 bg-nexora-primary/10 border border-nexora-primary/20 rounded-full px-4 py-1.5 text-sm text-nexora-primary mb-6">
+            <span className="w-2 h-2 bg-nexora-secondary rounded-full animate-pulse" />
+            Book a Demo
           </div>
-        </section>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Let's{" "}
+            <span className="bg-gradient-to-r from-nexora-primary to-nexora-secondary bg-clip-text text-transparent">
+              Automate
+            </span>{" "}
+            Your Business
+          </h1>
+          <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+            Schedule a free demo and see how Nexora can handle your customer communication on autopilot.
+          </p>
+        </div>
+      </section>
 
-        {/* Contact Form & Info */}
-        <section className="py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Contact Form */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-2xl">Send us a Message</CardTitle>
-                  <CardDescription>
-                    Fill out the form below and we'll get back to you within 24 hours.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <Label htmlFor="name">Full Name *</Label>
-                        <Input
-                          id="name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleChange}
-                          required
-                          placeholder="Your full name"
-                        />
-                      </div>
-                      <div>
-                        <Label htmlFor="email">Email Address *</Label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          required
-                          placeholder="your.email@example.com"
-                        />
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <Label htmlFor="phone">Phone Number</Label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        placeholder="+1 (555) 123-4567"
-                      />
-                    </div>
-
-                    <div>
-                      <Label htmlFor="message">Message *</Label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        required
-                        placeholder="Tell us about your project, requirements, or any questions you have..."
-                        rows={6}
-                      />
-                    </div>
-
-                    <Button 
-                      type="submit" 
-                      size="lg" 
-                      className="w-full bg-gradient-to-r from-nexora-primary to-nexora-secondary hover:opacity-90 gap-2"
-                    >
-                      <Send className="h-4 w-4" />
-                      Send Message
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
-
-              {/* Contact Information */}
-              <div className="space-y-6">
-                <div>
-                  <h2 className="text-2xl font-bold text-foreground mb-6">Get in Touch</h2>
-                  <p className="text-muted-foreground mb-8">
-                    We're here to help you succeed. Choose the most convenient way to reach us, 
-                    and our team will respond promptly to discuss your project needs.
-                  </p>
+      {/* Contact Form & Info */}
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Form */}
+            <div className="bg-card border border-border rounded-2xl p-8">
+              <h2 className="text-2xl font-bold text-foreground mb-2">Request a Free Demo</h2>
+              <p className="text-muted-foreground mb-8">Fill out the form and our team will reach out within 24 hours.</p>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="name">Full Name *</Label>
+                    <Input id="name" name="name" value={formData.name} onChange={handleChange} required placeholder="Your name" className="mt-1.5" />
+                  </div>
+                  <div>
+                    <Label htmlFor="email">Email *</Label>
+                    <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} required placeholder="you@company.com" className="mt-1.5" />
+                  </div>
                 </div>
+                <div>
+                  <Label htmlFor="phone">Phone Number</Label>
+                  <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="+44 7877 180793" className="mt-1.5" />
+                </div>
+                <div>
+                  <Label htmlFor="message">How can we help? *</Label>
+                  <Textarea id="message" name="message" value={formData.message} onChange={handleChange} required placeholder="Tell us about your business and what you'd like to automate..." rows={5} className="mt-1.5" />
+                </div>
+                <Button type="submit" size="lg" className="w-full bg-gradient-to-r from-nexora-primary to-nexora-secondary hover:opacity-90 rounded-xl gap-2">
+                  <Send className="h-4 w-4" />
+                  Book Demo
+                </Button>
+              </form>
+            </div>
 
-                <div className="grid grid-cols-1 gap-6">
-                  {contactInfo.map((info, index) => {
-                    const Icon = info.icon;
-                    return (
-                      <Card key={index}>
-                        <CardContent className="p-6">
-                          <div className="flex items-start space-x-4">
-                            <div className="w-10 h-10 bg-gradient-to-r from-nexora-primary to-nexora-secondary rounded-lg flex items-center justify-center flex-shrink-0">
-                              <Icon className="h-5 w-5 text-white" />
-                            </div>
-                            <div>
-                              <h3 className="font-semibold text-foreground mb-2">{info.title}</h3>
-                              {info.details.map((detail, idx) => (
-                                <p key={idx} className="text-muted-foreground text-sm">
-                                  {detail}
-                                </p>
-                              ))}
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    );
-                  })}
+            {/* Contact Info */}
+            <div className="space-y-6">
+              <div>
+                <h2 className="text-2xl font-bold text-foreground mb-4">Get in Touch</h2>
+                <p className="text-muted-foreground mb-8">
+                  Prefer to reach out directly? Contact us through any of these channels.
+                </p>
+              </div>
+              {contactInfo.map((info, index) => {
+                const Icon = info.icon;
+                return (
+                  <div key={index} className="bg-card border border-border rounded-2xl p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-nexora-primary to-nexora-secondary rounded-xl flex items-center justify-center flex-shrink-0">
+                        <Icon className="h-5 w-5 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-foreground mb-2">{info.title}</h3>
+                        {info.details.map((detail, idx) => (
+                          <p key={idx} className="text-muted-foreground text-sm">{detail}</p>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+              {/* WhatsApp CTA */}
+              <div className="bg-gradient-to-r from-green-500/10 to-green-600/10 border border-green-500/20 rounded-2xl p-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <MessageSquare className="h-5 w-5 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-foreground mb-1">Chat on WhatsApp</h3>
+                    <p className="text-muted-foreground text-sm mb-3">Get instant replies from our team</p>
+                    <Button asChild size="sm" className="bg-gradient-to-r from-green-500 to-green-600 hover:opacity-90 rounded-lg">
+                      <a href="https://wa.me/447877180793" target="_blank" rel="noopener noreferrer">
+                        Start Chat
+                      </a>
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-16">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold text-foreground mb-6">
-              Ready for Your Free Consultation?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              No commitment required. Let's discuss your project and explore how we can help you succeed.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-gradient-to-r from-nexora-primary to-nexora-secondary hover:opacity-90">
-                <a href="tel:+923090230074">Call Pakistan Office</a>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <a href="tel:+971547659859">Call UAE Office</a>
-              </Button>
-            </div>
-          </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </Layout>
   );
 };

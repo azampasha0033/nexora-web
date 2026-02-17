@@ -1,167 +1,154 @@
-
-import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/Layout";
-import { ExternalLink } from "lucide-react";
+import { TrendingUp, Clock, Users, MessageSquare, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Portfolio = () => {
-  const [activeFilter, setActiveFilter] = useState("All");
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  const filters = ["All", "Web", "POS", "WordPress", "Shopify"];
-
-  const projects = [
+  const caseStudies = [
     {
-      id: 1,
-      name: "E-Commerce Platform",
-      category: "Web",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d",
-      outcome: "Increased online sales by 150% with modern React-based platform."
+      industry: "Healthcare Clinic",
+      title: "70% Fewer Missed Appointments",
+      description: "A multi-location dental clinic automated appointment reminders and patient follow-ups via WhatsApp and robo calls.",
+      stats: [
+        { label: "Missed appointments reduced", value: "70%" },
+        { label: "Patient response rate", value: "92%" },
+        { label: "Staff hours saved/week", value: "25hrs" }
+      ],
+      color: "from-blue-500 to-cyan-500"
     },
     {
-      id: 2,
-      name: "Restaurant POS System",
-      category: "POS",
-      image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24",
-      outcome: "Streamlined operations and reduced order processing time by 40%."
+      industry: "E-Commerce Store",
+      title: "3x More Recovered Carts",
+      description: "A Shopify fashion brand used Nexora's abandoned cart automation and WhatsApp follow-ups to recover lost sales.",
+      stats: [
+        { label: "Cart recovery rate", value: "3x" },
+        { label: "Revenue increase", value: "45%" },
+        { label: "Auto-confirmed orders", value: "98%" }
+      ],
+      color: "from-purple-500 to-pink-500"
     },
     {
-      id: 3,
-      name: "Corporate WordPress Site",
-      category: "WordPress",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
-      outcome: "Enhanced SEO rankings and improved user engagement by 65%."
+      industry: "Real Estate Agency",
+      title: "Lead Response in Under 5 Seconds",
+      description: "A property agency deployed AI chat on their website and WhatsApp to instantly qualify and route buyer leads.",
+      stats: [
+        { label: "Avg response time", value: "<5s" },
+        { label: "Lead conversion up", value: "60%" },
+        { label: "Leads captured/month", value: "500+" }
+      ],
+      color: "from-orange-500 to-red-500"
     },
     {
-      id: 4,
-      name: "Fashion Shopify Store",
-      category: "Shopify",
-      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8",
-      outcome: "Custom theme increased conversion rate by 85%."
+      industry: "Education Institute",
+      title: "Automated Enrollment Pipeline",
+      description: "A training institute automated course inquiries, fee reminders, and enrollment confirmations via WhatsApp bot.",
+      stats: [
+        { label: "Inquiry handling", value: "24/7" },
+        { label: "Enrollment rate up", value: "40%" },
+        { label: "Manual follow-ups cut", value: "80%" }
+      ],
+      color: "from-green-500 to-emerald-500"
     },
     {
-      id: 5,
-      name: "SaaS Web Application",
-      category: "Web",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
-      outcome: "Delivered scalable platform serving 10,000+ active users."
+      industry: "Service Business",
+      title: "Zero Missed Customer Calls",
+      description: "A home services company used VoIP CRM and smart robo calling to ensure every customer inquiry was captured and followed up.",
+      stats: [
+        { label: "Missed calls", value: "0%" },
+        { label: "Customer satisfaction", value: "96%" },
+        { label: "Repeat bookings up", value: "55%" }
+      ],
+      color: "from-nexora-primary to-nexora-secondary"
     },
     {
-      id: 6,
-      name: "Retail Management System",
-      category: "POS",
-      image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df",
-      outcome: "Integrated inventory management reduced stock discrepancies by 90%."
-    },
-    {
-      id: 7,
-      name: "Blog & Content Platform",
-      category: "WordPress",
-      image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a",
-      outcome: "Custom CMS improved content management efficiency by 70%."
-    },
-    {
-      id: 8,
-      name: "Dropshipping Store",
-      category: "Shopify",
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3",
-      outcome: "Automated workflows increased order fulfillment speed by 200%."
+      industry: "Restaurant Chain",
+      title: "Automated Order & Delivery Updates",
+      description: "A multi-outlet restaurant chain automated order confirmations, delivery tracking, and customer feedback collection.",
+      stats: [
+        { label: "Order confirmation", value: "Instant" },
+        { label: "Support tickets down", value: "65%" },
+        { label: "Review collection up", value: "4x" }
+      ],
+      color: "from-yellow-500 to-orange-500"
     }
   ];
 
-  const filteredProjects = activeFilter === "All" 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter);
-
   return (
     <Layout>
-      <div className="bg-gradient-to-b from-nexora-accent to-background">
-        {/* Hero Section */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Our Portfolio
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Discover our successful projects and the results we've delivered for clients across various industries
-            </p>
+      {/* Hero */}
+      <section className="relative py-20 lg:py-28 overflow-hidden bg-nexora-dark">
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-nexora-primary/10 rounded-full blur-3xl animate-pulse-glow" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-nexora-secondary/10 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '1.5s' }} />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_hsl(220_25%_8%)_70%)]" />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center gap-2 bg-nexora-primary/10 border border-nexora-primary/20 rounded-full px-4 py-1.5 text-sm text-nexora-primary mb-6">
+            <span className="w-2 h-2 bg-nexora-secondary rounded-full animate-pulse" />
+            Success Stories
           </div>
-        </section>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Real Results.{" "}
+            <span className="bg-gradient-to-r from-nexora-primary to-nexora-secondary bg-clip-text text-transparent">
+              Real Businesses.
+            </span>
+          </h1>
+          <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+            See how businesses across industries use Nexora to automate communication, capture leads, and grow revenue.
+          </p>
+        </div>
+      </section>
 
-        {/* Filter Tabs */}
-        <section className="py-8">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-wrap justify-center gap-4">
-              {filters.map((filter) => (
-                <Button
-                  key={filter}
-                  variant={activeFilter === filter ? "default" : "outline"}
-                  onClick={() => setActiveFilter(filter)}
-                  className={activeFilter === filter 
-                    ? "bg-gradient-to-r from-nexora-primary to-nexora-secondary" 
-                    : ""
-                  }
-                >
-                  {filter}
-                </Button>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Projects Grid */}
-        <section className="py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {filteredProjects.map((project) => (
-                <Card key={project.id} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
-                  <div className="relative">
-                    <img
-                      src={project.image}
-                      alt={project.name}
-                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-end p-4">
-                      <Button size="sm" variant="secondary" className="gap-2">
-                        <ExternalLink className="h-4 w-4" />
-                        View
-                      </Button>
-                    </div>
-                    <div className="absolute top-4 left-4">
-                      <span className="bg-nexora-primary text-white px-2 py-1 rounded text-xs font-medium">
-                        {project.category}
-                      </span>
-                    </div>
+      {/* Case Studies Grid */}
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {caseStudies.map((study, index) => (
+              <div key={index} className="group relative bg-card border border-border rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300">
+                <div className={`h-2 bg-gradient-to-r ${study.color}`} />
+                <div className="p-6">
+                  <span className="inline-block text-xs font-medium text-muted-foreground bg-muted px-3 py-1 rounded-full mb-4">
+                    {study.industry}
+                  </span>
+                  <h3 className="text-xl font-bold text-foreground mb-3">{study.title}</h3>
+                  <p className="text-muted-foreground text-sm mb-6">{study.description}</p>
+                  <div className="grid grid-cols-3 gap-3">
+                    {study.stats.map((stat, idx) => (
+                      <div key={idx} className="text-center">
+                        <div className={`text-lg font-bold bg-gradient-to-r ${study.color} bg-clip-text text-transparent`}>
+                          {stat.value}
+                        </div>
+                        <div className="text-xs text-muted-foreground mt-1">{stat.label}</div>
+                      </div>
+                    ))}
                   </div>
-                  <CardContent className="p-4">
-                    <h3 className="font-semibold text-foreground mb-2">{project.name}</h3>
-                    <p className="text-sm text-muted-foreground">{project.outcome}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+                </div>
+              </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* CTA Section */}
-        <section className="py-16 bg-muted">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold text-foreground mb-6">
-              Ready to Create Your Success Story?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Let's discuss how we can help you achieve similar results for your business.
-            </p>
-            <Button asChild size="lg" className="bg-gradient-to-r from-nexora-primary to-nexora-secondary hover:opacity-90">
-              <a href="/contact">Start Your Project Today</a>
-            </Button>
-          </div>
-        </section>
-      </div>
+      {/* CTA */}
+      <section className="relative py-20 bg-nexora-dark overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-10 right-20 w-64 h-64 bg-nexora-primary/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-10 left-20 w-80 h-80 bg-nexora-secondary/10 rounded-full blur-3xl" />
+        </div>
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Your Success Story Starts Here
+          </h2>
+          <p className="text-lg text-gray-400 mb-8">
+            Join businesses that have transformed their customer communication with Nexora.
+          </p>
+          <Button asChild size="lg" className="bg-gradient-to-r from-nexora-primary to-nexora-secondary hover:opacity-90 text-lg px-8 py-6 rounded-xl gap-2">
+            <Link to="/contact">
+              Book Free Demo <ArrowRight className="h-5 w-5" />
+            </Link>
+          </Button>
+        </div>
+      </section>
     </Layout>
   );
 };
