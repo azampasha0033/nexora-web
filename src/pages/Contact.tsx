@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import Layout from "@/components/Layout";
-import { Phone, Mail, Clock, Send, MessageSquare } from "lucide-react";
+import { Phone, Mail, Clock, Send, MessageSquare, ShieldCheck, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { sendFormNotification, generateCaptcha } from "@/lib/messaging";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -15,14 +16,54 @@ const Contact = () => {
     phone: "",
     message: ""
   });
+  const [captcha, setCaptcha] = useState(generateCaptcha());
+  const [captchaInput, setCaptchaInput] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const refreshCaptcha = () => {
+    setCaptcha(generateCaptcha());
+    setCaptchaInput("");
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Demo Request Sent!",
-      description: "Thank you! Our team will contact you within 24 hours to schedule your demo.",
+
+    if (parseInt(captchaInput) !== captcha.answer) {
+      toast({
+        title: "Verification Failed",
+        description: "Please solve the math question correctly.",
+        variant: "destructive",
+      });
+      refreshCaptcha();
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    const success = await sendFormNotification({
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+      source: "Demo Request",
     });
-    setFormData({ name: "", email: "", phone: "", message: "" });
+
+    setIsSubmitting(false);
+
+    if (success) {
+      toast({
+        title: "Demo Request Sent!",
+        description: "Thank you! Our team will contact you within 24 hours to schedule your demo.",
+      });
+      setFormData({ name: "", email: "", phone: "", message: "" });
+      refreshCaptcha();
+    } else {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or reach out via WhatsApp.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -101,9 +142,38 @@ const Contact = () => {
                   <Label htmlFor="message">How can we help? *</Label>
                   <Textarea id="message" name="message" value={formData.message} onChange={handleChange} required placeholder="Tell us about your business and what you'd like to automate..." rows={5} className="mt-1.5" />
                 </div>
-                <Button type="submit" size="lg" className="w-full bg-gradient-to-r from-nexora-primary to-nexora-secondary hover:opacity-90 rounded-xl gap-2">
-                  <Send className="h-4 w-4" />
-                  Book Demo
+
+                {/* Human Verification */}
+                <div className="bg-muted/50 border border-border rounded-xl p-4">
+                  <div className="flex items-center gap-2 mb-3">
+                    <ShieldCheck className="h-4 w-4 text-nexora-primary" />
+                    <Label className="text-sm font-medium">Human Verification</Label>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="text-foreground font-mono text-lg bg-background border border-border rounded-lg px-4 py-2 select-none">
+                      {captcha.question} = ?
+                    </span>
+                    <Input
+                      type="number"
+                      value={captchaInput}
+                      onChange={(e) => setCaptchaInput(e.target.value)}
+                      placeholder="Answer"
+                      required
+                      className="w-28"
+                    />
+                    <Button type="button" variant="ghost" size="sm" onClick={refreshCaptcha} className="text-xs text-muted-foreground">
+                      New question
+                    </Button>
+                  </div>
+                </div>
+
+                <Button type="submit" size="lg" disabled={isSubmitting} className="w-full bg-gradient-to-r from-nexora-primary to-nexora-secondary hover:opacity-90 rounded-xl gap-2">
+                  {isSubmitting ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    <Send className="h-4 w-4" />
+                  )}
+                  {isSubmitting ? "Sending..." : "Book Demo"}
                 </Button>
               </form>
             </div>
