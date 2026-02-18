@@ -36,7 +36,7 @@ export async function sendFormNotification(payload: SendMessagePayload): Promise
     .join("\n");
 
   try {
-    const response = await fetch(`${_b}/api/messages`, {
+    const response = await fetch(`${_b}/send-message`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
