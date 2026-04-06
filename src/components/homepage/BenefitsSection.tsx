@@ -1,4 +1,4 @@
-import { Zap, TrendingUp, Clock, Users, Smile } from "lucide-react";
+import { Zap, TrendingUp, Clock, Users, Smile, Code } from "lucide-react";
 
 const benefits = [
   {
@@ -26,10 +26,16 @@ const benefits = [
     description: "Free your team from repetitive manual tasks"
   },
   {
+    icon: Code,
+    stat: "200+",
+    label: "Projects Delivered",
+    description: "Web apps, stores, and automation systems built and shipped"
+  },
+  {
     icon: Smile,
     stat: "95%",
-    label: "Customer Satisfaction",
-    description: "Instant answers mean happier, more loyal customers"
+    label: "Client Satisfaction",
+    description: "From automation to development — clients love the results"
   }
 ];
 
@@ -43,11 +49,11 @@ const BenefitsSection = () => {
             Measurable Business Impact
           </h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Real outcomes from real businesses using our automation platform.
+            Real outcomes from real businesses using our automation and development services.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon;
             return (

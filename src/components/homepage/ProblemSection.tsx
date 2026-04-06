@@ -1,4 +1,4 @@
-import { MessageSquareOff, UserX, Clock, PhoneMissed, HeadphonesIcon } from "lucide-react";
+import { MessageSquareOff, UserX, Clock, PhoneMissed, HeadphonesIcon, Code2 } from "lucide-react";
 
 const problems = [
   {
@@ -13,18 +13,23 @@ const problems = [
   },
   {
     icon: Clock,
-    title: "Manual order confirmations consume staff time",
-    description: "Your team spends hours on repetitive copy-paste tasks."
+    title: "Manual operations consume staff time",
+    description: "Your team spends hours on repetitive order confirmations and follow-ups."
   },
   {
     icon: PhoneMissed,
     title: "Missed calls = lost revenue",
-    description: "After-hours calls go unanswered and customers move on."
+    description: "After-hours calls go unanswered and customers move on to competitors."
   },
   {
     icon: HeadphonesIcon,
     title: "Agents overloaded with repetitive queries",
     description: "Support staff burned out answering the same questions daily."
+  },
+  {
+    icon: Code2,
+    title: "Outdated tech slowing your business",
+    description: "Legacy systems and manual workflows keep you from scaling effectively."
   }
 ];
 
@@ -38,11 +43,11 @@ const ProblemSection = () => {
             Your Business Is Losing Customers Right Now
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Every unanswered message, missed call, and delayed reply is revenue walking away.
+            Every unanswered message, missed call, and outdated system is revenue walking away.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
           {problems.map((problem, index) => {
             const Icon = problem.icon;
             return (

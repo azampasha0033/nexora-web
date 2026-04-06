@@ -1,4 +1,4 @@
-import { Heart, Building2, ShoppingBag, GraduationCap, Wrench } from "lucide-react";
+import { Heart, Building2, ShoppingBag, GraduationCap, Wrench, UtensilsCrossed, Briefcase, Truck } from "lucide-react";
 
 const industries = [
   {
@@ -17,8 +17,8 @@ const industries = [
   },
   {
     icon: ShoppingBag,
-    name: "E-commerce",
-    useCase: "Order confirmations, shipping updates, abandoned cart recovery — all on autopilot.",
+    name: "E-Commerce & Marketplaces",
+    useCase: "Shopify, Amazon, eBay, Walmart — order confirmations, shipping updates, and cart recovery on autopilot.",
     color: "text-nexora-secondary",
     bgColor: "bg-nexora-secondary/10"
   },
@@ -35,6 +35,27 @@ const industries = [
     useCase: "Booking confirmations, service updates, and follow-up reviews collected automatically.",
     color: "text-purple-500",
     bgColor: "bg-purple-500/10"
+  },
+  {
+    icon: UtensilsCrossed,
+    name: "Restaurants & Food",
+    useCase: "Order automation, delivery tracking, customer feedback, and WhatsApp menu sharing.",
+    color: "text-orange-500",
+    bgColor: "bg-orange-500/10"
+  },
+  {
+    icon: Briefcase,
+    name: "Startups & SaaS",
+    useCase: "Custom web apps, dashboards, MVPs, and process automation built for rapid scaling.",
+    color: "text-pink-500",
+    bgColor: "bg-pink-500/10"
+  },
+  {
+    icon: Truck,
+    name: "Logistics & Supply Chain",
+    useCase: "Shipment tracking, driver coordination, and automated customer delivery updates.",
+    color: "text-cyan-500",
+    bgColor: "bg-cyan-500/10"
   }
 ];
 
@@ -48,11 +69,11 @@ const IndustriesSection = () => {
             Built for Every Industry
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            No matter your sector, our AI adapts to your business workflows.
+            Whether you're a clinic, store, startup, or enterprise — our solutions adapt to your workflows.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-7xl mx-auto">
           {industries.map((industry, index) => {
             const Icon = industry.icon;
             return (
@@ -61,9 +82,9 @@ const IndustriesSection = () => {
                   <div className={`w-10 h-10 ${industry.bgColor} rounded-lg flex items-center justify-center`}>
                     <Icon className={`h-5 w-5 ${industry.color}`} />
                   </div>
-                  <h3 className="font-semibold text-foreground">{industry.name}</h3>
+                  <h3 className="font-semibold text-foreground text-sm">{industry.name}</h3>
                 </div>
-                <p className="text-sm text-muted-foreground">{industry.useCase}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{industry.useCase}</p>
               </div>
             );
           })}

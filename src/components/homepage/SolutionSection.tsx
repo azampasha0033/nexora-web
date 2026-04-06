@@ -1,4 +1,5 @@
-import { MessageSquare, Globe, ShoppingCart, PhoneCall, Headphones } from "lucide-react";
+import { MessageSquare, Globe, ShoppingCart, PhoneCall, Headphones, Code, Monitor, Database } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const features = [
   {
@@ -9,6 +10,13 @@ const features = [
     bgColor: "bg-green-500/10"
   },
   {
+    icon: PhoneCall,
+    title: "Smart Robo Calling",
+    description: "Automated voice campaigns for reminders, marketing outreach, OTP verification, and follow-ups at scale.",
+    color: "text-amber-500",
+    bgColor: "bg-amber-500/10"
+  },
+  {
     icon: Globe,
     title: "Website Live Chat Automation",
     description: "Converts website visitors into qualified leads automatically with intelligent AI chat.",
@@ -17,24 +25,38 @@ const features = [
   },
   {
     icon: ShoppingCart,
-    title: "Shopify Store Automation",
-    description: "Order confirmation, abandoned cart recovery, and status updates — all automated.",
+    title: "E-Commerce & Marketplace Automation",
+    description: "Shopify, Amazon, eBay, Walmart — order confirmations, cart recovery, and support automated.",
     color: "text-nexora-secondary",
     bgColor: "bg-nexora-secondary/10"
   },
   {
-    icon: PhoneCall,
-    title: "Smart Robo Calling",
-    description: "Automated reminders, marketing campaigns, and OTP verification at scale.",
-    color: "text-amber-500",
-    bgColor: "bg-amber-500/10"
+    icon: Code,
+    title: "Custom Software Development",
+    description: "Web apps, SaaS platforms, CRM dashboards, POS systems — built to your business needs.",
+    color: "text-purple-500",
+    bgColor: "bg-purple-500/10"
+  },
+  {
+    icon: Monitor,
+    title: "Website & Store Development",
+    description: "WordPress, Shopify, WooCommerce, and custom-coded websites designed for performance and conversion.",
+    color: "text-pink-500",
+    bgColor: "bg-pink-500/10"
   },
   {
     icon: Headphones,
     title: "VoIP CRM Calling Workspace",
     description: "Agents call from a unified dashboard with full history, recordings, and CRM integration.",
-    color: "text-purple-500",
-    bgColor: "bg-purple-500/10"
+    color: "text-cyan-500",
+    bgColor: "bg-cyan-500/10"
+  },
+  {
+    icon: Database,
+    title: "Business Process Automation",
+    description: "Automate repetitive tasks — invoicing, inventory alerts, reporting, and workflow triggers.",
+    color: "text-orange-500",
+    bgColor: "bg-orange-500/10"
   }
 ];
 
@@ -43,16 +65,16 @@ const SolutionSection = () => {
     <section className="py-20 bg-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <span className="text-nexora-secondary font-semibold text-sm uppercase tracking-wider">The Solution</span>
+          <span className="text-nexora-secondary font-semibold text-sm uppercase tracking-wider">What We Do</span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-3 mb-4">
-            One Automation System — All Communication Channels
+            Automation + Development — Everything Under One Roof
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Replace disconnected tools with a single intelligent platform that handles every customer touchpoint.
+            We don't just build websites — we build intelligent systems that automate your customer communication, sales, and operations.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-7xl mx-auto">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
@@ -63,11 +85,17 @@ const SolutionSection = () => {
                 <div className={`w-12 h-12 ${feature.bgColor} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
                   <Icon className={`h-6 w-6 ${feature.color}`} />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">{feature.title}</h3>
+                <h3 className="text-base font-semibold text-foreground mb-2">{feature.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
               </div>
             );
           })}
+        </div>
+
+        <div className="text-center mt-12">
+          <Link to="/services" className="inline-flex items-center gap-2 text-nexora-primary hover:text-nexora-secondary transition-colors font-medium">
+            View All Services →
+          </Link>
         </div>
       </div>
     </section>
