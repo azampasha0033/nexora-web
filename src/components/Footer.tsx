@@ -73,6 +73,7 @@ const Footer = () => {
               <li className="flex items-start space-x-2 text-sm">
                 <Phone className="h-4 w-4 text-nexora-primary mt-0.5" />
                 <div className="text-gray-400">
+                  <div>USA: +1 307 417 0173</div>
                   <div>UK: +44 7877 180793</div>
                   <div>UAE: +971 54 765 9859</div>
                   <div>Pakistan: +92 309 023 0074</div>

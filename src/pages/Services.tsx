@@ -45,6 +45,58 @@ const Services = () => {
       color: "from-purple-500 to-purple-600"
     },
     {
+      icon: ShoppingCart,
+      title: "Amazon Seller Automation",
+      description: "Streamline your Amazon FBA/FBM operations with automated buyer messaging, review requests, and inventory management alerts.",
+      benefits: [
+        "Automated buyer-seller messaging",
+        "Review request automation",
+        "Inventory level alerts",
+        "Order status notifications",
+        "Returns & refund handling"
+      ],
+      color: "from-amber-500 to-orange-500"
+    },
+    {
+      icon: ShoppingCart,
+      title: "eBay Store Automation",
+      description: "Manage eBay buyer communication, listing updates, and post-sale follow-ups with intelligent automation.",
+      benefits: [
+        "Buyer inquiry auto-responses",
+        "Listing optimization alerts",
+        "Post-sale feedback requests",
+        "Shipping & tracking updates",
+        "Multi-listing management"
+      ],
+      color: "from-blue-500 to-indigo-500"
+    },
+    {
+      icon: ShoppingCart,
+      title: "Walmart Marketplace Automation",
+      description: "Scale your Walmart marketplace operations with automated customer messaging, order management, and performance tracking.",
+      benefits: [
+        "Customer inquiry automation",
+        "Order confirmation & tracking",
+        "Performance metric alerts",
+        "Listing compliance checks",
+        "Inventory sync notifications"
+      ],
+      color: "from-blue-600 to-blue-700"
+    },
+    {
+      icon: ShoppingCart,
+      title: "E-Commerce Platform Integration",
+      description: "Connect WooCommerce, Magento, BigCommerce, or any custom e-commerce platform with unified communication automation.",
+      benefits: [
+        "Multi-platform order management",
+        "Unified customer messaging",
+        "Cross-platform analytics",
+        "Abandoned cart recovery",
+        "Customer lifecycle automation"
+      ],
+      color: "from-pink-500 to-rose-500"
+    },
+    {
       icon: Phone,
       title: "Smart Robo Calling",
       description: "Automated voice campaigns for reminders, marketing outreach, OTP verification, and customer follow-ups at scale.",

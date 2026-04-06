@@ -70,6 +70,94 @@ const Portfolio = () => {
         { label: "Review collection up", value: "4x" }
       ],
       color: "from-yellow-500 to-orange-500"
+    },
+    {
+      industry: "Custom Web Application",
+      title: "Full-Stack SaaS Dashboard",
+      description: "Built a custom CRM dashboard with real-time analytics, role-based access, and automated reporting for a logistics company.",
+      stats: [
+        { label: "Manual reporting cut", value: "90%" },
+        { label: "Team productivity up", value: "3x" },
+        { label: "Data accuracy", value: "99.5%" }
+      ],
+      color: "from-indigo-500 to-violet-500"
+    },
+    {
+      industry: "POS System",
+      title: "Cloud-Based Point of Sale",
+      description: "Developed a cloud POS system with inventory management, sales tracking, and multi-branch synchronization for a retail chain.",
+      stats: [
+        { label: "Transaction speed", value: "<2s" },
+        { label: "Inventory accuracy", value: "99%" },
+        { label: "Branches connected", value: "12" }
+      ],
+      color: "from-teal-500 to-cyan-500"
+    },
+    {
+      industry: "WordPress Website",
+      title: "High-Performance Business Site",
+      description: "Designed and launched a SEO-optimized WordPress site with custom themes, booking system, and lead capture for a consulting firm.",
+      stats: [
+        { label: "Page load time", value: "<1.5s" },
+        { label: "Organic traffic up", value: "180%" },
+        { label: "Lead capture rate", value: "12%" }
+      ],
+      color: "from-sky-500 to-blue-600"
+    },
+    {
+      industry: "Shopify Store",
+      title: "Premium E-Commerce Storefront",
+      description: "Built a high-converting Shopify store with custom theme, automated email flows, and integrated WhatsApp support for a beauty brand.",
+      stats: [
+        { label: "Conversion rate", value: "4.8%" },
+        { label: "AOV increase", value: "35%" },
+        { label: "Return customers", value: "42%" }
+      ],
+      color: "from-purple-600 to-fuchsia-500"
+    },
+    {
+      industry: "Amazon FBA Store",
+      title: "Automated Amazon Operations",
+      description: "Set up full Amazon FBA automation — listing optimization, buyer messaging, review collection, and inventory alerts for a home goods brand.",
+      stats: [
+        { label: "Review rate up", value: "5x" },
+        { label: "Response time", value: "<1hr" },
+        { label: "Sales increase", value: "60%" }
+      ],
+      color: "from-amber-500 to-orange-500"
+    },
+    {
+      industry: "Multi-Channel E-Commerce",
+      title: "Unified Commerce Platform",
+      description: "Integrated Shopify, Amazon, and eBay into a single dashboard with centralized inventory, order management, and customer communication.",
+      stats: [
+        { label: "Channels unified", value: "4" },
+        { label: "Order errors down", value: "95%" },
+        { label: "Fulfillment speed", value: "2x" }
+      ],
+      color: "from-rose-500 to-pink-600"
+    },
+    {
+      industry: "WooCommerce Store",
+      title: "Custom E-Commerce Solution",
+      description: "Developed a WooCommerce store with custom payment gateway, WhatsApp order notifications, and automated inventory sync.",
+      stats: [
+        { label: "Payment success rate", value: "99.2%" },
+        { label: "Cart abandonment down", value: "40%" },
+        { label: "Support tickets cut", value: "60%" }
+      ],
+      color: "from-lime-500 to-green-600"
+    },
+    {
+      industry: "Corporate Web Portal",
+      title: "Enterprise Client Portal",
+      description: "Built a secure client portal with document management, ticketing system, and real-time project tracking for a construction company.",
+      stats: [
+        { label: "Client satisfaction", value: "98%" },
+        { label: "Document retrieval", value: "<3s" },
+        { label: "Support cost down", value: "50%" }
+      ],
+      color: "from-slate-500 to-gray-600"
     }
   ];
 
