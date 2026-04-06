@@ -13,7 +13,7 @@ const FinalCTASection = () => {
           See Your Business Running Without Manual Replies
         </h2>
         <p className="text-lg text-white/80 mb-8 max-w-xl mx-auto">
-          Join hundreds of businesses automating their customer communication. 
+          Whether you need AI automation, a new website, or custom software — let's talk. 
           Get a personalized demo in 15 minutes.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -24,8 +24,8 @@ const FinalCTASection = () => {
             </Link>
           </Button>
           <Button asChild size="lg" variant="outline" className="bg-transparent border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6 rounded-xl">
-            <a href="tel:+447877180793">
-              Call: +44 7877 180793
+            <a href="tel:+13074170173">
+              Call: +1 307 417 0173
             </a>
           </Button>
         </div>
