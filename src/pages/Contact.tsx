@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { MapPin } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -85,6 +86,11 @@ const Contact = () => {
       icon: Clock,
       title: "Business Hours",
       details: ["Monday - Friday: 9:00 AM - 6:00 PM", "Saturday: 10:00 AM - 4:00 PM"]
+    },
+    {
+      icon: MapPin,
+      title: "Office Address",
+      details: ["30 N Gould St Ste 37598", "Sheridan, WY 82801"]
     }
   ];
 

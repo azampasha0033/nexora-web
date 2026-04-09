@@ -86,6 +86,12 @@ const Footer = () => {
                   <div>sales@nexora.llc</div>
                 </div>
               </li>
+              <li className="flex items-start space-x-2 text-sm">
+                <div className="text-gray-400">
+                  <div>30 N Gould St Ste 37598</div>
+                  <div>Sheridan, WY 82801</div>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
