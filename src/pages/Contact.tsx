@@ -4,6 +4,7 @@ import { MapPin } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 import Layout from "@/components/Layout";
 import { Phone, Mail, Clock, Send, MessageSquare, ShieldCheck, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
@@ -20,6 +21,8 @@ const Contact = () => {
   const [captcha, setCaptcha] = useState(generateCaptcha());
   const [captchaInput, setCaptchaInput] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [agreePrivacy, setAgreePrivacy] = useState(false);
+  const [agreeTerms, setAgreeTerms] = useState(false);
 
   const refreshCaptcha = () => {
     setCaptcha(generateCaptcha());
@@ -28,6 +31,15 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!agreePrivacy || !agreeTerms) {
+      toast({
+        title: "Agreement Required",
+        description: "Please agree to both the Privacy Policy and Terms of Service.",
+        variant: "destructive",
+      });
+      return;
+    }
 
     if (parseInt(captchaInput) !== captcha.answer) {
       toast({
@@ -173,7 +185,39 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <Button type="submit" size="lg" disabled={isSubmitting} className="w-full bg-gradient-to-r from-nexora-primary to-nexora-secondary hover:opacity-90 rounded-xl gap-2">
+                {/* Policy Checkboxes */}
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <Checkbox
+                      id="agreePrivacy"
+                      checked={agreePrivacy}
+                      onCheckedChange={(checked) => setAgreePrivacy(checked === true)}
+                      className="mt-0.5"
+                    />
+                    <label htmlFor="agreePrivacy" className="text-sm text-muted-foreground cursor-pointer">
+                      I have read and agreed to the{" "}
+                      <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-nexora-primary hover:underline">
+                        Privacy Policy
+                      </a>
+                    </label>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Checkbox
+                      id="agreeTerms"
+                      checked={agreeTerms}
+                      onCheckedChange={(checked) => setAgreeTerms(checked === true)}
+                      className="mt-0.5"
+                    />
+                    <label htmlFor="agreeTerms" className="text-sm text-muted-foreground cursor-pointer">
+                      I have read and agree to the{" "}
+                      <a href="/terms" target="_blank" rel="noopener noreferrer" className="text-nexora-primary hover:underline">
+                        Terms of Service
+                      </a>
+                    </label>
+                  </div>
+                </div>
+
+                <Button type="submit" size="lg" disabled={isSubmitting || !agreePrivacy || !agreeTerms} className="w-full bg-gradient-to-r from-nexora-primary to-nexora-secondary hover:opacity-90 rounded-xl gap-2">
                   {isSubmitting ? (
                     <Loader2 className="h-4 w-4 animate-spin" />
                   ) : (
