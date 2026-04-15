@@ -13,7 +13,7 @@ const Privacy = () => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_hsl(220_25%_8%)_70%)]" />
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-bold text-white mb-4">Privacy Policy</h1>
-          <p className="text-gray-400">Last updated: January 2025</p>
+          <p className="text-gray-400">Last updated: April 2025</p>
         </div>
       </section>
 
@@ -22,34 +22,58 @@ const Privacy = () => {
           <div className="bg-card border border-border rounded-2xl p-8 space-y-8">
             <section>
               <h2 className="text-2xl font-bold mb-4 text-foreground">1. Information We Collect</h2>
-              <p className="text-muted-foreground mb-4">We collect information you provide directly to us, such as when you request a demo, contact us, or use our platform:</p>
-              <ul className="list-disc list-inside text-muted-foreground space-y-2">
-                <li>Name and email address</li>
-                <li>Phone number and contact information</li>
-                <li>Company information and business details</li>
-                <li>Communication data processed through our platform</li>
-              </ul>
+              <p className="text-muted-foreground">We collect information you provide directly, including your name, email address, phone number, and any other information you submit through our forms. We also collect usage data such as IP addresses, browser type, and pages visited.</p>
             </section>
+
             <section>
               <h2 className="text-2xl font-bold mb-4 text-foreground">2. How We Use Your Information</h2>
+              <p className="text-muted-foreground mb-4">We use the information we collect to:</p>
               <ul className="list-disc list-inside text-muted-foreground space-y-2">
-                <li>Provide and improve our automation platform</li>
-                <li>Process demo requests and support inquiries</li>
-                <li>Send technical notices and platform updates</li>
-                <li>Analyze usage patterns to improve our services</li>
+                <li>Process your financing applications</li>
+                <li>Communicate with you about our services</li>
+                <li>Send SMS/text messages if you have opted in</li>
+                <li>Improve our website and services</li>
+                <li>Comply with legal obligations</li>
               </ul>
             </section>
+
             <section>
-              <h2 className="text-2xl font-bold mb-4 text-foreground">3. Data Security</h2>
-              <p className="text-muted-foreground">We implement industry-standard security measures to protect your data against unauthorized access, alteration, or destruction.</p>
+              <h2 className="text-2xl font-bold mb-4 text-foreground">3. SMS/Text Messaging</h2>
+              <p className="text-muted-foreground mb-4">If you opt in to receive SMS/text messages:</p>
+              <ul className="list-disc list-inside text-muted-foreground space-y-2">
+                <li>We may send messages regarding your application status, account updates, and promotional offers.</li>
+                <li>Message frequency varies. Message and data rates may apply.</li>
+                <li>You can opt out at any time by replying STOP to any message.</li>
+                <li>For help, reply HELP or contact us at our provided contact information.</li>
+                <li>Carriers are not liable for delayed or undelivered messages.</li>
+                <li>Your consent to receive SMS is not a condition of any purchase.</li>
+                <li>We do not share your phone number or SMS opt-in data with third parties for marketing purposes. Your information is only shared with service providers who assist us in delivering messages.</li>
+              </ul>
             </section>
+
             <section>
-              <h2 className="text-2xl font-bold mb-4 text-foreground">4. Contact Us</h2>
-              <p className="text-muted-foreground">For privacy-related questions:</p>
-              <div className="mt-4 text-muted-foreground">
-                <p>Email: support@nexora.llc</p>
-                <p>Phone: +44 7877 180793 (UK) | +971 54 765 9859 (UAE) | +92 309 023 0074 (Pakistan)</p>
-              </div>
+              <h2 className="text-2xl font-bold mb-4 text-foreground">4. Data Sharing</h2>
+              <p className="text-muted-foreground">We do not sell your personal information. We may share your data with trusted service providers who help us operate our business, comply with legal requirements, or protect our rights. We do not share your opt-in consent or phone number with third parties for their marketing purposes.</p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold mb-4 text-foreground">5. Data Security</h2>
+              <p className="text-muted-foreground">We implement reasonable security measures to protect your personal information. However, no method of transmission over the Internet is 100% secure.</p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold mb-4 text-foreground">6. Your Rights</h2>
+              <p className="text-muted-foreground">You may request access to, correction of, or deletion of your personal information by contacting us. You may opt out of SMS messaging at any time by replying STOP.</p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold mb-4 text-foreground">7. Changes to This Policy</h2>
+              <p className="text-muted-foreground">We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new policy on this page.</p>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold mb-4 text-foreground">8. Contact Us</h2>
+              <p className="text-muted-foreground">If you have questions about this Privacy Policy, please contact us through our <a href="/contact" className="text-nexora-primary hover:underline">Contact page</a>.</p>
             </section>
           </div>
         </div>
