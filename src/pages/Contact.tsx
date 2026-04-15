@@ -4,6 +4,7 @@ import { MapPin } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 import Layout from "@/components/Layout";
 import { Phone, Mail, Clock, Send, MessageSquare, ShieldCheck, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
@@ -20,6 +21,8 @@ const Contact = () => {
   const [captcha, setCaptcha] = useState(generateCaptcha());
   const [captchaInput, setCaptchaInput] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [agreePrivacy, setAgreePrivacy] = useState(false);
+  const [agreeTerms, setAgreeTerms] = useState(false);
 
   const refreshCaptcha = () => {
     setCaptcha(generateCaptcha());
@@ -28,6 +31,15 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!agreePrivacy || !agreeTerms) {
+      toast({
+        title: "Agreement Required",
+        description: "Please agree to both the Privacy Policy and Terms of Service.",
+        variant: "destructive",
+      });
+      return;
+    }
 
     if (parseInt(captchaInput) !== captcha.answer) {
       toast({
