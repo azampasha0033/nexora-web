@@ -21,6 +21,7 @@ const Contact = () => {
   const [captcha, setCaptcha] = useState(generateCaptcha());
   const [captchaInput, setCaptchaInput] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [agreeSms, setAgreeSms] = useState(false);
   const [agreePrivacy, setAgreePrivacy] = useState(false);
   const [agreeTerms, setAgreeTerms] = useState(false);
 
@@ -32,10 +33,10 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!agreePrivacy || !agreeTerms) {
+    if (!agreeSms || !agreePrivacy || !agreeTerms) {
       toast({
         title: "Agreement Required",
-        description: "Please agree to both the Privacy Policy and Terms of Service.",
+        description: "Please agree to SMS consent, Privacy Policy, and Terms of Service.",
         variant: "destructive",
       });
       return;
@@ -189,6 +190,20 @@ const Contact = () => {
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
                     <Checkbox
+                      id="agreeSms"
+                      checked={agreeSms}
+                      onCheckedChange={(checked) => setAgreeSms(checked === true)}
+                      className="mt-0.5"
+                    />
+                    <label htmlFor="agreeSms" className="text-sm text-muted-foreground cursor-pointer leading-relaxed">
+                      By submitting this form and signing up for texts, you consent to receive Nexora LLC text messages (e.g. Appointment Setting, Registration reminders, and enrollment information) from Nexora LLC at the number provided, including messages sent by autodialer. Message & data rates may apply. Message frequency varies. Unsubscribe at any time by replying STOP or clicking the unsubscribe link (where available). Reply HELP for help.{" "}
+                      <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-nexora-primary hover:underline">Privacy Policy</a>
+                      {" "}&{" "}
+                      <a href="/terms" target="_blank" rel="noopener noreferrer" className="text-nexora-primary hover:underline">Terms and Conditions</a>.
+                    </label>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Checkbox
                       id="agreePrivacy"
                       checked={agreePrivacy}
                       onCheckedChange={(checked) => setAgreePrivacy(checked === true)}
@@ -217,7 +232,7 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <Button type="submit" size="lg" disabled={isSubmitting || !agreePrivacy || !agreeTerms} className="w-full bg-gradient-to-r from-nexora-primary to-nexora-secondary hover:opacity-90 rounded-xl gap-2">
+                <Button type="submit" size="lg" disabled={isSubmitting || !agreeSms || !agreePrivacy || !agreeTerms} className="w-full bg-gradient-to-r from-nexora-primary to-nexora-secondary hover:opacity-90 rounded-xl gap-2">
                   {isSubmitting ? (
                     <Loader2 className="h-4 w-4 animate-spin" />
                   ) : (
