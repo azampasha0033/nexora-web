@@ -29,7 +29,6 @@ const Privacy = () => {
               <h2 className="text-2xl font-bold mb-4 text-foreground">2. How We Use Your Information</h2>
               <p className="text-muted-foreground mb-4">We use the information we collect to:</p>
               <ul className="list-disc list-inside text-muted-foreground space-y-2">
-                <li>Process your financing applications</li>
                 <li>Communicate with you about our services</li>
                 <li>Send SMS/text messages if you have opted in</li>
                 <li>Improve our website and services</li>
