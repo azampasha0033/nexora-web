@@ -52,7 +52,8 @@ const Privacy = () => {
 
             <section>
               <h2 className="text-2xl font-bold mb-4 text-foreground">4. Data Sharing</h2>
-              <p className="text-muted-foreground">We do not sell your personal information. We may share your data with trusted service providers who help us operate our business, comply with legal requirements, or protect our rights. We do not share your opt-in consent or phone number with third parties for their marketing purposes.</p>
+              <p className="text-muted-foreground mb-4">We do not sell your personal information. We may share your data with trusted service providers who help us operate our business, comply with legal requirements, or protect our rights. We do not share your opt-in consent or phone number with third parties for their marketing purposes.</p>
+              <p className="text-muted-foreground">No mobile information will be shared with third parties/affiliates for marketing/promotional purposes. All the above categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.</p>
             </section>
 
             <section>

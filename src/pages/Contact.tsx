@@ -21,6 +21,7 @@ const Contact = () => {
   const [captcha, setCaptcha] = useState(generateCaptcha());
   const [captchaInput, setCaptchaInput] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [agreeSms, setAgreeSms] = useState(false);
   const [agreePrivacy, setAgreePrivacy] = useState(false);
   const [agreeTerms, setAgreeTerms] = useState(false);
 
@@ -32,10 +33,10 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!agreePrivacy || !agreeTerms) {
+    if (!agreeSms || !agreePrivacy || !agreeTerms) {
       toast({
         title: "Agreement Required",
-        description: "Please agree to both the Privacy Policy and Terms of Service.",
+        description: "Please agree to SMS consent, Privacy Policy, and Terms of Service.",
         variant: "destructive",
       });
       return;
