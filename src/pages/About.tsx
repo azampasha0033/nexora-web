@@ -23,7 +23,7 @@ const About = () => {
   ];
 
   const milestones = [
-    { year: "2023", title: "Nexora Founded", description: "Started with a vision to eliminate manual customer communication." },
+    { year: "2023", title: "Neexora Founded", description: "Started with a vision to eliminate manual customer communication." },
     { year: "2024", title: "Platform Launch", description: "Launched our unified AI communication automation platform." },
     { year: "2025", title: "ChatAsBot.com Live", description: "Released WhatsApp automation product serving hundreds of businesses." },
     { year: "2025+", title: "Global Expansion", description: "Scaling across UK, UAE, GCC, and South Asia with enterprise features." }
@@ -50,7 +50,7 @@ const About = () => {
             </span>
           </h1>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-            Neexora LLC (operating as Nexora) is an AI-powered communication automation platform that helps businesses automate conversations, capture leads, and close customers 24/7.
+            Neexora LLC (operating as Neexora) is an AI-powered communication automation platform that helps businesses automate conversations, capture leads, and close customers 24/7.
           </p>
         </div>
       </section>
@@ -63,7 +63,7 @@ const About = () => {
               <h2 className="text-3xl font-bold text-foreground mb-6">Our Mission</h2>
               <p className="text-lg text-muted-foreground mb-6">
                 We're on a mission to eliminate the gap between businesses and their customers. 
-                Every missed message, unanswered call, and abandoned cart is lost revenue. Nexora fixes that.
+                Every missed message, unanswered call, and abandoned cart is lost revenue. Neexora fixes that.
               </p>
               <div className="space-y-4">
                 {["AI that replies instantly on WhatsApp & website", "Smart calling that never misses a follow-up", "Store automation that runs your e-commerce 24/7", "One dashboard to manage all communication"].map((item, i) => (
@@ -155,7 +155,7 @@ const About = () => {
             Ready to Join the Automation Revolution?
           </h2>
           <p className="text-lg text-gray-400 mb-8">
-            See Nexora in action. Book a free demo today.
+            See Neexora in action. Book a free demo today.
           </p>
           <Button asChild size="lg" className="bg-gradient-to-r from-nexora-primary to-nexora-secondary hover:opacity-90 text-lg px-8 py-6 rounded-xl gap-2">
             <Link to="/contact">
