@@ -196,7 +196,7 @@ const Contact = () => {
                       className="mt-0.5"
                     />
                     <label htmlFor="agreeSms" className="text-sm text-muted-foreground cursor-pointer leading-relaxed">
-                      By submitting this form and signing up for texts, you consent to receive Nexora LLC text messages (e.g. Appointment Setting, Registration reminders, Promotional messages, and enrolment information) from Nexora LLC at the number provided, including messages sent by autodialer. Message & data rates may apply. Message frequency varies. Unsubscribe at any time by replying STOP or clicking the unsubscribe link (where available). Reply HELP for help.{" "}
+                      By submitting this form and signing up for texts, you consent to receive Nexora LLC text messages (e.g. Appointment Setting, Registration reminders, Promotional messages, and enrolment information) from Nexora LLC at the number provided, including messages sent. Message & data rates may apply. Message frequency varies. Unsubscribe at any time by replying STOP or clicking the unsubscribe link (where available). Reply HELP for help.{" "}
                       <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-nexora-primary hover:underline">Privacy Policy</a>
                       {" "}&{" "}
                       <a href="/terms" target="_blank" rel="noopener noreferrer" className="text-nexora-primary hover:underline">Terms and Conditions</a>.
