@@ -41,7 +41,7 @@ const About = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 bg-nexora-primary/10 border border-nexora-primary/20 rounded-full px-4 py-1.5 text-sm text-nexora-primary mb-6">
             <span className="w-2 h-2 bg-nexora-secondary rounded-full animate-pulse" />
-            About Nexora
+            About Neexora LLC
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
             We Build the Future of{" "}
@@ -50,7 +50,7 @@ const About = () => {
             </span>
           </h1>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-            Nexora is an AI-powered communication automation platform that helps businesses automate conversations, capture leads, and close customers 24/7.
+            Neexora LLC (operating as Nexora) is an AI-powered communication automation platform that helps businesses automate conversations, capture leads, and close customers 24/7.
           </p>
         </div>
       </section>
